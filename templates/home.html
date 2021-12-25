@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>Cafes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Karma", sans-serif
+    }
+
+    .w3-bar-block .w3-bar-item {
+        padding: 20px
+    }
+</style>
+<body>
+<!-- Top menu -->
+<div class="w3-top">
+    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+        <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+        <div class="w3-right w3-padding-16">Mail</div>
+        <div class="w3-center w3-padding-16">My Food</div>
+    </div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+    <!-- First Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+        {% for item in cafes: %}
+        <div class="w3-quarter" style="margin-bottom: 20px">
+            <img src="{{ item['img_url'] }}" alt="Sandwich" style="width:100%;height:200px;object-fit: cover">
+            <h3 style="width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">{{ item["name"]
+                }}</h3>
+            <a href="{{ item['map_url'] }}">Visit: {{ item["location"] }}</a>
+        </div>
+        {% endfor %}
+        <div class="w3-quarter" style="margin-bottom: 20px;box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);border-radius: 5px;cursor: pointer;">
+          <a href="{{ url_for('add') }}">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/1200px-Plus_symbol.svg.png"
+                style="width:100%;height:200px;object-fit: cover"
+            />
+          </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>Add</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.mySlides {display: none}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+</style>
+<body class="w3-content" style="margin-top: 50px">
+<!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-white" style="margin-left:260px">
+        <form method="post" action="{{ url_for('add') }}">
+            <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="name"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Map URL" required name="map_url"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Image URL" required name="img_url"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Location" required name="location"></p>
+            <p class="checkbox"><span style="flex: 1;">Has Sockets</span> <input class="w3-input w3-border" type="checkbox" name="has_sockets"></p>
+            <p class="checkbox"><span style="flex: 1;">Has Toilets</span> <input class="w3-input w3-border" type="checkbox" name="has_toilet"></p>
+            <p class="checkbox"><span style="flex: 1;">Has Wifi</span> <input class="w3-input w3-border" type="checkbox" name="has_wifi"></p>
+            <p class="checkbox"><span style="flex: 1;">Can Take Calls</span> <input class="w3-input w3-border" type="checkbox" name="can_take_calls"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Seats" required name="seats"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Coffee Price" required name="coffee_price"></p>
+            <button type="submit" class="w3-button w3-green w3-third">Create</button>
+        </form>
+    </div>
+</body>
+</html>
